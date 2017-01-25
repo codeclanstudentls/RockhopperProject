@@ -21,7 +21,7 @@ MapWrapper.prototype = {
             infoWindow.open(this.googleMap, marker);             
   },
 
-  addCustomMarker: function(feature, posistion){
+  addCustomMarker: function(feature, position){
   var customMarker = new google.maps.customMarker({
         position: feature.position,
         icon: icons[feature.type].icon,
