@@ -18,8 +18,16 @@ MapWrapper.prototype = {
              content: info
              
            }); 
-            infoWindow.open(this.googleMap, marker);       
+            infoWindow.open(this.googleMap, marker);             
   },
+
+  addCustomMarker: function(feature, posistion){
+  var customMarker = new google.maps.customMarker({
+        position: feature.position,
+        icon: icons[feature.type].icon,
+        map: this.googleMap
+  });
+},
 
   addClickEvent: function() {
     google.maps.event.addListener(this.googleMap, 'click', 

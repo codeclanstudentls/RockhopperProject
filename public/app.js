@@ -11,7 +11,7 @@ var initialize = function(){
 
   var button = document.querySelector('button');
   button.onclick = function() {
-    console.log('Helloooo');
+    console.log('This is a test');
     var centerCoords = {lat: 41.878114, lng: -87.629798};
     mainMap.centerClick(centerCoords);
 
