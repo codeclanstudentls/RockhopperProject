@@ -1,8 +1,9 @@
-var MapWrapper = function(container, coords, zoom){
+var MapWrapper = function(container, coords, zoom, styles) {
   // var container = document.querySelector('#main-map');
   this.googleMap = new google.maps.Map(container, {
     center: coords,
-    zoom: zoom
+    zoom: zoom,
+    styles: styles
   });
 }
 
@@ -40,6 +41,13 @@ MapWrapper.prototype = {
 
   centerClick: function(coords) {
     this.googleMap.setCenter(coords);
+  },
+
+  styleMap: function(styles) {
+    styledMapType = new google.maps.StyledMapType({
+      
+    });
+
   }
 
 

@@ -1,18 +1,18 @@
 var initialize = function(){
-  var center = {lat: 51.507351, lng: -0.127758 };
+  var center = {lat: 59.2907, lng: -4.2026 };
   var mapDiv = document.querySelector('#main-map');
 
-  var mainMap = new MapWrapper(mapDiv, center, 10);
+  var mainMap = new MapWrapper(mapDiv, center, 6);
   mainMap.addMarker(center);
 
-  var heathrow = {lat: 51.470022, lng: 0.454295};
+  var shetland = {lat: 60.5297, lng: 1.2659};
   mainMap.addMarker(heathrow, 'Looky here'); 
   mainMap.addClickEvent();
 
   var button = document.querySelector('button');
   button.onclick = function() {
-    console.log('This is a test');
-    var centerCoords = {lat: 41.878114, lng: -87.629798};
+    console.log('This is Isle of Skye');
+    var centerCoords = {lat: 57.5359, lng: 6.2263};
     mainMap.centerClick(centerCoords);
 
   }
