@@ -42,6 +42,7 @@ MapWrapper.prototype = {
       travelMode: 'TRANSIT'
     };
 
+   
     this.directionsService.route(request, function(result, status){
       if (status === 'OK'){
         this.directionsDisplay.setDirections(result);
