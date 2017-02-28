@@ -7,8 +7,8 @@
   margin: 0;
   padding: 0;
 
-  height: 748px;
-  width: 1200px;
+  height: 600px;
+  width: 1000px;
   /*background-color: blue;*/
 
 }
@@ -47,9 +47,9 @@ ul.topnav li.icon {display: none;}
 .btn {
   position: relative;
 
-  display: flex;
-  flex-direction: row;
-  margin: 30px left;
+  /*display: flex;
+  flex-direction: row;*/
+  margin: 30px auto;
   padding: 5px;
 
   overflow: hidden;
@@ -87,7 +87,7 @@ ul.topnav li.icon {display: none;}
   
   display: block;
   width: 0;
-  padding-top: 0;
+  padding-top: 5px;
     
   border-radius: 100%;
   

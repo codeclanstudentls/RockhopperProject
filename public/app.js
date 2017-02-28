@@ -1,5 +1,5 @@
 var initialize = function(){
-  var center = {lat: 59.2907, lng: -4.2026 };
+  var center = {lat: 58.1907, lng: -4.2026 };
   var mapDiv = document.querySelector('#main-map');
 
   var mainMap = new MapWrapper(mapDiv, center, 6);
@@ -50,43 +50,34 @@ var initialize = function(){
   request.send();
 
   
-  // var locateButton = document.querySelector('#my-location');
-  // locateButton.onclick = function() {
+
+    // var locateButton = document.querySelector("#my-location");
+    // var centerCoords = {lat: 57.5359, lng: 6.2263};
+    // mainMap.centerClick(centerCoords);
+
+
+  
+  var locateButton = document.querySelector("#my-location");
+  locateButton.onclick = function(event){
+    mainMap.googleMap.setCenter({lat: 55.947034 ,lng: -3.201905});
+    mainMap.addMarker({lat: 55.947034 ,lng: -3.201905}, "You are here!");
+    mainMap.addClickEvent(center);
     
-  //   // var centerCoords = {lat: 57.5359, lng: 6.2263};
-  //   // mainMap.centerClick(centerCoords);
+  }
+  var geolocate = function(){
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
 
-  //   var centerCoords = {  
+      };
 
-  //     if (navigator.geolocation) {
-  //         navigator.geolocation.getCurrentPosition(function(position) {
-  //           var pos = {
-  //             lat: position.coords.latitude,
-  //             lng: position.coords.longitude
-  //           };
+      mainMap.googleMap.setCenter(pos);
+      
 
-  //           infoWindow.setPosition(pos);
-  //           infoWindow.setContent('Location found.');
-  //           map.setCenter(pos);
-  //         }, function() {
-  //           handleLocationError(true, infoWindow, map.getCenter());
-  //         });
-  //       } else {
-  //         // Browser doesn't support Geolocation
-  //         handleLocationError(false, infoWindow, map.getCenter());
-  //       }
-  //     }
-
-  //     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  //       infoWindow.setPosition(pos);
-  //       infoWindow.setContent(browserHasGeolocation ?
-  //                             'Error: The Geolocation service failed.' :
-  //                             'Error: Your browser doesn\'t support geolocation.');
-  //     }};
-
-  //   mainMap.centerClick(centerCoords);
-  // }
-
+    })
+  }
+    
 
   var routeButton = document.querySelector('#choice');
   routeButton.onclick = function() {
