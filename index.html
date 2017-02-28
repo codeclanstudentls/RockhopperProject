@@ -8,15 +8,41 @@
 
     <script src='app.js'></script>
     <script src='mapWrapper.js'></script>
+
+    <link href="//cdn.muicss.com/mui-0.9.9/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.9/js/mui.min.js"></script>
     
 </head>
 
 
 <body>
 
+<ul class="topnav" id="myTopnav"><span></span>
+  <!-- <li><a href="#Start Trip">Select a Location</a></li> -->
+  <li><a href="#Welcome">ROCKHOPPER</a></li>
+  <li><a href="#FerryOperatorLinks">Ferry Operator Links</a></li>
+  <li><a href="#ItemsList">Items List</a></li>
+  <li><a href="#Weather">Weather</a></li>
+
+
+  
+  <li class="icon">
+    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  </li>
+</ul>
 
   <div id='content'></div>
 
+  <select id='origin' class="btn">
+
+    
+  </select>
+
+
+  <select id='destination' class="btn">
+    
+  </select>
+<button id='choice' class="btn">Add</button>
 
   <div id="main-map">
   
@@ -24,7 +50,7 @@
 
 
         
-        <button class="btn" type="button"><span>Rockhopper!</span></button>
+        <button id='my-location' class="btn" type="button"><span>Where am I!</span></button>
 </body>
 
 </html>

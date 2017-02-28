@@ -3,8 +3,12 @@ var MapWrapper = function(container, coords, zoom, styles) {
   this.googleMap = new google.maps.Map(container, {
     center: coords,
     zoom: zoom,
-    styles: styles
+    styles: styles 
   });
+
+  this.directionsDisplay = new google.maps.DirectionsRenderer();
+  this.directionsService = new google.maps.DirectionsService();
+  this.directionsDisplay.setMap(this.googleMap);
 }
 
 MapWrapper.prototype = {
@@ -29,6 +33,22 @@ MapWrapper.prototype = {
         map: this.googleMap
   });
 },
+
+
+  addRouteCalculator: function(start, end){
+    request = {
+      origin: start,
+      destination: end,
+      travelMode: 'TRANSIT'
+    };
+
+    this.directionsService.route(request, function(result, status){
+      if (status === 'OK'){
+        this.directionsDisplay.setDirections(result);
+      }
+    }.bind(this)
+    );
+  },
 
   addClickEvent: function() {
     google.maps.event.addListener(this.googleMap, 'click', 
