@@ -1,15 +1,27 @@
-
-#main-map {
+#flex-container{
   display: flex;
   flex-direction: row; 
+  width: 100%;
+}
+
+
+#main-map {
   height: 100%;
   max-width: 100%
   margin: 0;
   padding: 0;
 
   height: 600px;
-  width: 1000px;
-  /*background-color: blue;*/
+  width: 70%;
+  
+}
+
+#todo-list{
+  width: 30%;
+  background-color: #333;
+  font-family: arial;
+  color: white;
+  margin-left: 10px;
 
 }
   

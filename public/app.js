@@ -1,3 +1,5 @@
+// var ajax = require('./ajax.js');
+
 var initialize = function(){
   var center = {lat: 58.1907, lng: -4.2026 };
   var mapDiv = document.querySelector('#main-map');
@@ -23,13 +25,13 @@ var initialize = function(){
   
   var origin = document.querySelector('#origin');
   var destination = document.querySelector('#destination');
-  var request = new XMLHttpRequest();
-  request.open('GET', 'http://localhost:5000/islands');
-  request.onload = function(){
+  
+
+ajax.getRequest('http://localhost:5000/islands', function(){
     if (this.status !== 200){
       return
     } else {
-    var jsonString = request.responseText;
+    var jsonString = this.responseText;
     var data = JSON.parse(jsonString);
     }
     for (var island of data) {
@@ -46,16 +48,43 @@ var initialize = function(){
 
 
     }
-  }
-  request.send();
+  })
 
+// var ul = document.querySelector('#todo-ul');
+// ajax.getRequest('http://localhost:5000/todos', function(){
+//   if (this.status !== 200){
+//     return
+//   } else {
   
+//   var jsonString = this.responseText;
+//   var data = JSON.parse(jsonString);
+//   for (var item of data){
+//     var li = document.createElement('li');
+//     li.innerText = item.item;
+//     ul.appendChild(li);
 
-    // var locateButton = document.querySelector("#my-location");
-    // var centerCoords = {lat: 57.5359, lng: 6.2263};
-    // mainMap.centerClick(centerCoords);
+//     var addButton = document.createElement("button");
+//     addButton.className = 'btn';
+//     addButton.innerText = '+';
+//     addButton.onclick = function(event){
+  
+//     }
 
+//     var removeButton = document.createElement("button");
+//     removeButton.className = 'btn';
+//     removeButton.innerText = '-';
+//     removeButton.onclick = function(event){
 
+//     }
+
+//     li.appendChild(addButton);
+//     li.appendChild(removeButton);
+
+//     }
+    
+//   }
+// });
+  
   
   var locateButton = document.querySelector("#my-location");
   locateButton.onclick = function(event){
@@ -99,6 +128,8 @@ var initialize = function(){
 
   }
 }
+
+
 
 
 

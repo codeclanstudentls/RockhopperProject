@@ -5,7 +5,7 @@
     <title>Google Maps</title>
     <link rel='stylesheet' type='text/css' href='main.css'>
     <script src='https://maps.googleapis.com/maps/api/js'></script>
-
+    <script src='ajax.js'></script>
     <script src='app.js'></script>
     <script src='mapWrapper.js'></script>
 
@@ -20,8 +20,8 @@
 <ul class="topnav" id="myTopnav"><span></span>
   <!-- <li><a href="#Start Trip">Select a Location</a></li> -->
   <li><a href="#Welcome">ROCKHOPPER</a></li>
-  <li><a href="#ItemsList">Items List</a></li>
-  <li><a href="#Weather">Weather</a></li>
+  <!-- <li><a href="#ItemsList">Items List</a></li> -->
+  <!-- <li><a href="#Weather">Weather</a></li> -->
 
   
   <li class="icon">
@@ -45,12 +45,15 @@
 <button id='choice' class="btn">Lets Go!</button>
 </label>
 
-
-  <div id="main-map">
-  
+<div id="flex-container">
+  <div id="main-map"></div>
+  <div id="todo-list">
+    <h2>To Do List</h2>
+    <ul id='todo-ul'></ul>
+    <input id='enter-text' type='text'></input>
+    
+  </div>
 </div>
-
-
         
         <button id='my-location' class="btn" type="button"><span>Where am I!</span></button>
 </body>
